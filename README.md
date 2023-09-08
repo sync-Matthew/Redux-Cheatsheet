@@ -53,7 +53,7 @@ export default userSlice.reducer
 
 4. Create `store.js` inside the redux directory.
 
-```
+```JavaScript
 // store.js
 
 "use client"
@@ -70,7 +70,7 @@ export const store = configureStore({
 
 5. Create `provider.js` inside the redux directory.
 
-```
+```JavaScript
 // provider.js
 
 "use client";
@@ -85,7 +85,7 @@ export function Providers({ children }) {
 
 6. Wrap your RootLayout with your Provider.
 
-```
+```JavaScript
 // app/layout.js
 
 import './globals.css'
