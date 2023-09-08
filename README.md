@@ -115,19 +115,36 @@ export default function RootLayout({ children }) {
 
 <h2>Retrieve Data from Store</h2>  
 
-1. Import `useSelector`  
-2. Add `use client` to the top of your component.  
-3. Import your action from the reducer. In this example we import `selectUser`  
-4. Create a variable to hold the retrieved data and call your action with `useSelector`.  
+1. Import `useSelector`.  
+2. Import your action from the reducer. In this example we import `selectUser`.  
 
-![image](https://github.com/sync-Matthew/Redux-Cheatsheet./assets/109091963/57d20de4-f359-4943-9d14-961cff16e8f5)
+*remember to declare this as a client component*  
+
+```JavaScript
+"use client"
+import { useSelector } from "react-redux";
+import { selectUser } from "@/redux/reducers/userSlice";
+
+export default function Page() {
+
+    const user = useSelector(selectUser);
+
+    return (
+        <h1>The email within the Redux store is: {user.email}</h1>
+    )
+
+}
+```
 
 <h2>Dispatch Actions to Store</h2>
 
 1. Import `useDispatch`.  
-2. Import your action from the store. In this example we import `setUser`.
+2. Import your action from the store. In this example we import `setUser`.  
+
+*remember to declare this as a client component*  
 
 ```JavaScript
+"use client"
 import { Button } from '@mui/material';
 import { useDispatch } from "react-redux";
 import { setUser } from "@/redux/reducers/userSlice";
