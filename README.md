@@ -122,3 +122,35 @@ export default function RootLayout({ children }) {
 
 ![image](https://github.com/sync-Matthew/Redux-Cheatsheet./assets/109091963/57d20de4-f359-4943-9d14-961cff16e8f5)
 
+<h2>Dispatch Actions to Store</h2>
+
+1. Import `useDispatch`.  
+2. Import your action from the store. In this example we import `setUser`.
+
+```JavaScript
+import { Button } from '@mui/material';
+import { useDispatch } from "react-redux";
+import { setUser } from "@/redux/reducers/userSlice";
+
+export default function Page() {
+
+    const dispatch = useDispatch()
+
+    const data = {
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "johndoe@gmail.com",
+        "realms" : [],
+        "logged_in": true,
+    }
+
+    return (
+        <Button
+            onClick={() => {dispatch(setUser(data))}}
+        >
+            Set User
+        </Button>
+    )
+
+}
+```  
